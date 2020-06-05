@@ -62,7 +62,7 @@ function prepareOptions(opts) {
     }, options.penthouse || {});
 
     // Show overwrite warning if penthouse params url, css, witdh or height are present
-    const checkOpts = intersection(keys(options.penthouse), ['url', 'css', 'width', 'height']);
+    const checkOpts = intersection(keys(options.penthouse), ['css', 'width', 'height']);
     if (checkOpts.length > 0) {
         console.warn(chalk.yellow('Detected presence of penthouse options:'), checkOpts.join(', '));
         console.warn(chalk.yellow('These options will be overwritten by critical during the process.'));
