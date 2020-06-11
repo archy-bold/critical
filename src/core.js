@@ -55,8 +55,8 @@ function combineCss(cssArray) {
  */
 function callPenthouse(document, options) {
   const {dimensions, width, height, userAgent, user, pass, penthouse: params = {}} = options;
-  const {customPageHeaders = {}} = params;
-  const {css: cssString, url} = document;
+  const {customPageHeaders = {}, url = document.url} = params;
+  const {css: cssString} = document;
   const config = {...params, cssString, url};
   const sizes = Array.isArray(dimensions) ? dimensions : [{width, height}];
   if (userAgent) {
