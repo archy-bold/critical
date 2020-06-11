@@ -56,8 +56,8 @@ function combineCss(cssArray) {
  */
 function callPenthouse(document, options) {
   const {dimensions, width, height, userAgent, user, pass, penthouse: params = {}} = options;
-  const {customPageHeaders = {}} = params;
-  const {css: cssString, url} = document;
+  const {customPageHeaders = {}, url = document.url} = params;
+  const {css: cssString} = document;
   const config = {...params, cssString, url};
   // Dimensions need to be sorted from small to wide. Otherwise the order gets corrupted
   const sizes = Array.isArray(dimensions)
